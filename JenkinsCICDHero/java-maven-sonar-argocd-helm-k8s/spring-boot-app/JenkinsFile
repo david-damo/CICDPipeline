@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       //image 'abhishekf5/maven-abhishek-docker-agent:v2'
-      image 'sanjeev/maven:3.9-jdk17:v2'
+      image 'sanjeev/maven-jdk17:v2'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
