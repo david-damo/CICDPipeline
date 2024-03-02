@@ -41,11 +41,15 @@ pipeline {
       }
       steps {
         script {
-        	sh 'echo Build and Push Docker Image passed'
+        	sh 'echo Build and Push Docker Image passed - 1'
             sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
+sh 'echo Build and Push Docker Image passed - 2'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
+sh 'echo Build and Push Docker Image passed - 3'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
+sh 'echo Build and Push Docker Image passed - 4'
                 dockerImage.push()
+sh 'echo Build and Push Docker Image passed - 5'
             }
         }
       }
