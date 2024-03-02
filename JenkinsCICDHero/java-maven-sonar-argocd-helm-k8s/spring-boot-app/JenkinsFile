@@ -35,7 +35,7 @@ pipeline {
     stage('Build and Push Docker Image - sanjeev') {
       environment {
         //DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
-        DOCKER_IMAGE = "sanjeevjha77/cicd-pipeline-sanjeev:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "sanjeevjha77/cicd-demo-sanjeev:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
