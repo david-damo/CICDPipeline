@@ -32,7 +32,7 @@ pipeline {
         }
       }
     }
-    stage('Build and Push Docker Image') {
+    stage('Build and Push Docker Image - sanjeev') {
       environment {
         //DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
         DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
