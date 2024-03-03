@@ -36,7 +36,7 @@ pipeline {
       environment {
         //DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
         DOCKER_IMAGE = "sanjeevjha77/cicd-demo-sanjeev:${BUILD_NUMBER}"
-        // DOCKERFILE_LOCATION = "JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
+        DOCKERFILE_LOCATION = "JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
@@ -46,7 +46,7 @@ pipeline {
             sh 'echo ********Docker tag created*****'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
             sh 'echo Build and Push Docker Image passed - 3'
-            sh 'echo *******************${dockerImage}*************'
+            //sh 'echo *******************${dockerImage}*************'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
             sh 'echo Build and Push Docker Image passed - 4'
             dockerImage.push()
