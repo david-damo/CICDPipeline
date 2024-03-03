@@ -49,7 +49,7 @@ sh 'echo Build and Push Docker Image passed - 3'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
 sh 'echo Build and Push Docker Image passed - 4'
                 // dockerImage.push()
-                docker push index.docker.io/sanjeevjha77/cicd-demo-sanjeev:${BUILD_NUMBER}
+                docker push index.docker.io\/sanjeevjha77\/cicd-demo-sanjeev:${BUILD_NUMBER}
 sh 'echo Build and Push Docker Image passed - 5'
             }
         }
