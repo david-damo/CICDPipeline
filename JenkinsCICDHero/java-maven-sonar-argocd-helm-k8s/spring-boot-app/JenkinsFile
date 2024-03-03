@@ -48,7 +48,7 @@ sh 'echo Build and Push Docker Image passed - 2'
 sh 'echo Build and Push Docker Image passed - 3'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
 sh 'echo Build and Push Docker Image passed - 4'
-                dockerImage.push()
+                sudo dockerImage.push()
 sh 'echo Build and Push Docker Image passed - 5'
             }
         }
