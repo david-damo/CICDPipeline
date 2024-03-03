@@ -50,7 +50,7 @@ pipeline {
             def dockerImage = docker.image("${DOCKER_IMAGE}")
             sh 'echo Build and Push Docker Image passed - 3'
 sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
-docker login -u sanjeevjha77 -p BabuJi@2003
+//docker login -u sanjeevjha77 -p 
             //sh 'echo *******************${dockerImage}*************'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
             sh 'echo Build and Push Docker Image passed - 4'
