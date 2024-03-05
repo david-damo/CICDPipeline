@@ -55,7 +55,7 @@ pipeline {
                     def dockerfile = 'Dockerfile'
                     //def imageTag = "martinmartin234/vuejs-foot" 
                     //sudo docker.build("${DOCKER_IMAGE}", "-f ${DOCKERFILE_LOCATION} .")
-sh 'docker build -t ${DOCKER_IMAGE} .'
+sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
             sh 'echo Build and Push Docker Image passed - 4'
             dockerImage.push("${env.BUILD_NUMBER}")
             sh 'echo Build and Push Docker Image passed - 5'
