@@ -45,18 +45,16 @@ pipeline {
         sh 'rm  ~/.dockercfg || true'
         sh 'rm ~/.docker/config.json || true'
             sh 'echo ********Starts docker tag creation*****'
-            sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
+            sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
             sh 'echo ********Docker tag created*****'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
             sh 'echo Build and Push Docker Image passed - 3'
-sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
-//docker login -u sanjeevjha77 -p 
+
             //sh 'echo *******************${dockerImage}*************'
             docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
 
             sh 'echo Build and Push Docker Image passed - 4'
-            //dockerImage.push("${env.BUILD_NUMBER}")
-dockerImage.build().push()
+            dockerImage.push("${env.BUILD_NUMBER}")
             sh 'echo Build and Push Docker Image passed - 5'
             }
         }
