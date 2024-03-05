@@ -54,7 +54,7 @@ pipeline {
             sudo docker.withRegistry('https://index.docker.io/v2/', "docker-cred") {
                     def dockerfile = 'Dockerfile'
                     //def imageTag = "martinmartin234/vuejs-foot" 
-                    sudo docker.build(dockerImage, "-f ${DOCKERFILE_LOCATION} ./")
+                    sudo docker.build("${DOCKER_IMAGE}")
             sh 'echo Build and Push Docker Image passed - 4'
             dockerImage.push("${env.BUILD_NUMBER}")
             sh 'echo Build and Push Docker Image passed - 5'
