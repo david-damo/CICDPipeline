@@ -56,7 +56,7 @@ sh 'cd JenkinsCICDHero/java-maven-sonar-argocd-helm-k8s/spring-boot-app && docke
 
             sh 'echo Build and Push Docker Image passed - 4'
             //dockerImage.push("${env.BUILD_NUMBER}")
-docker.build().push()
+dockerImage.build().push()
             sh 'echo Build and Push Docker Image passed - 5'
             }
         }
