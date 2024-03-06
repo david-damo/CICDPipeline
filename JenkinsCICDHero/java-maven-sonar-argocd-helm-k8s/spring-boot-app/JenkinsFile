@@ -57,7 +57,7 @@ pipeline {
                     //sudo docker.build("${DOCKER_IMAGE}", "-f ${DOCKERFILE_LOCATION} .")
 
             sh 'echo Build and Push Docker Image passed - 4'
-            dockerImage.push("${env.BUILD_NUMBER}")
+            dockerImage.push()
             sh 'echo Build and Push Docker Image passed - 5'
             }
         }
